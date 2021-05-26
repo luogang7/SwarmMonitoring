@@ -71,7 +71,7 @@ func postFunction(w http.ResponseWriter, r *http.Request) {
 func main() {
 
 	mysqlUserptr = flag.String("user", "root", "MySQL user")
-	mysqlPassptr = flag.String("pass", "1234", "MySQL password")
+	mysqlPassptr = flag.String("pass", "root", "MySQL password")
 	flag.Parse()
 
 	database, err := CreateDatabase()
