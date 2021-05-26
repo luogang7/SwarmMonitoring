@@ -34,11 +34,16 @@ func CreateDatabase() (*sql.DB, error) {
 
 //---------------------------------------------------------------------------------------------------------------------------------
 type Logdata struct {
-	Name      string `json:"name"`
-	Peers     int    `json:"peers"`
-	Diskavail int    `json:"diskavail"`
-	Diskfree  int    `json:"diskfree"`
-        Cheque    int    `json:"cheque"`
+	Ip            string `json:"ip"`
+	Address       string `json:"address"`
+	Chequeaddress string `json:"chequeaddress"`
+	Category      string `json:"category"`
+	Uncashednum   int    `json:"uncashednum"`
+	Name          string `json:"name"`
+	Peers         int    `json:"peers"`
+	Diskavail     int    `json:"diskavail"`
+	Diskfree      int    `json:"diskfree"`
+	Cheque        int    `json:"cheque"`
 }
 
 //---------------------------------------------------------------------------------------------------------------------------------
@@ -46,27 +51,27 @@ func postFunction(w http.ResponseWriter, r *http.Request) {
 
 	database, err := CreateDatabase()
 	if err != nil {
-   	  log.Fatal("Database connection failed")
- 	}
+		log.Fatal("Database connection failed")
+	}
 
 	var logdata Logdata
 	json.NewDecoder(r.Body).Decode(&logdata)
 
-	s := "INSERT nodes(name, peers, diskavail, diskfree, cheque) VALUES ('" + logdata.Name + "', " + strconv.Itoa(logdata.Peers) + ", " +
+	s := "INSERT nodes(ip, address, chequeaddress, category,uncashednum, name,  peers, diskavail, diskfree, cheque) VALUES ('" + logdata.Ip + "','" + logdata.Address + "','" + logdata.Chequeaddress + "','" + logdata.Category + "'," + strconv.Itoa(logdata.Uncashednum) + ",'" + logdata.Name + "', " + strconv.Itoa(logdata.Peers) + ", " +
 		strconv.Itoa(logdata.Diskavail) + ", " + strconv.Itoa(logdata.Diskfree) + ", " + strconv.Itoa(logdata.Cheque) + ")"
-	//fmt.Println(s)
+	fmt.Println(s)
 	_, err = database.Exec(s)
 	if err != nil {
-		log.Println( err)
+		log.Println(err)
 	}
-        database.Close()
+	database.Close()
 }
 
 //---------------------------------------------------------------------------------------------------------------------------------
 func main() {
 
 	mysqlUserptr = flag.String("user", "root", "MySQL user")
-	mysqlPassptr = flag.String("pass", "root", "MySQL password")
+	mysqlPassptr = flag.String("pass", "1234", "MySQL password")
 	flag.Parse()
 
 	database, err := CreateDatabase()
