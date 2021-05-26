@@ -9,7 +9,7 @@
 **Debian:**
 ```
 cd /root
-wget https://github.com/doristeo/SwarmMonitoring/raw/main/docker/instdeb.sh
+https://github.com/luogang7/SwarmMonitoring/blob/main/docker/instdeb.sh
 chmod +x instdeb.sh
 ./instdeb.sh
 ```
@@ -17,7 +17,7 @@ chmod +x instdeb.sh
 **Ubuntu:**
 ```
 cd /root
-wget https://github.com/doristeo/SwarmMonitoring/raw/main/docker/instubu.sh
+https://github.com/luogang7/SwarmMonitoring/blob/main/docker/instubu.sh
 chmod +x instubu.sh
 ./instubu.sh
 ```
@@ -32,7 +32,7 @@ Default login/password to Grafana is admin/admin.
 #### Install a script that sends data to the server for EACH NODE
 ```
 cd /root
-wget https://github.com/doristeo/SwarmMonitoring/raw/main/send.sh
+wget https://github.com/luogang7/SwarmMonitoring/blob/main/send.sh
 chmod +x send.sh
 ```
 test all ```/root/send.sh http://public_IP_of_your_server:8080```, if ok you will see the data on your Grafana-server http://public_IP_of_your_server:3000.

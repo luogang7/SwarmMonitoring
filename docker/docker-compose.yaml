@@ -26,8 +26,8 @@ services:
           - 3000:3000
       restart: always
   swarmmon:
-      container_name: swarmmon1
-      image: doristeo/swarmmon
+      container_name: swarmmonitoring
+      image: luog/swarmmonitoring
       ports:
           - 8080:8080
       restart: always
