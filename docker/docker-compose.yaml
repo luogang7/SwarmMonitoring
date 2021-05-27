@@ -27,7 +27,7 @@ services:
       restart: always
   swarmmonitoring:
       container_name: swarmmonitoring_lg
-      image: luog/swarmmonitoring:0.0.3
+      image: luog/swarmmonitoring:0.0.1
       depends_on:
         - mysql
       ports:
