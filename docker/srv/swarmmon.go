@@ -18,7 +18,7 @@ var mysqlPassptr *string
 
 //---------------------------------------------------------------------------------------------------------------------------------
 func CreateDatabase() (*sql.DB, error) {
-	serverName := "localhost:3306"
+	serverName := "mysql:3306"
 	user := *mysqlUserptr
 	password := *mysqlPassptr
 	dbName := "swarms"
