@@ -67,7 +67,7 @@ function makejson(){
   diskavail=$(df -P . | awk 'NR==2{print $2}')
   diskfree=$(df -P . | awk 'NR==2{print $4}')
   cheque=$(curl -s http://localhost:1635/chequebook/cheque | jq '.lastcheques | length')
-  json='{"ip":"'"$ip"'","address":'${address}',"chequeaddress":"'"${chequeaddress}"'","category":"'${category}'","uncashednum":'${uncashednum}',"name":"'"$name"'","peers":'$peers',"diskavail":'$diskavail',"diskfree":'$diskfree',"cheque":'$cheque'}'
+  json='{"ip":"'"$ip"'","address":'${address}',"chequeaddress":'${chequeaddress}',"category":"'${category}'","uncashednum":'${uncashednum}',"name":"'"$name"'","peers":'$peers',"diskavail":'$diskavail',"diskfree":'$diskfree',"cheque":'$cheque'}'
 }
 
 if [ $# -eq 0 ]
