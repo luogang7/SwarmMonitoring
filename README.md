@@ -17,7 +17,7 @@ chmod +x instdeb.sh
 **Ubuntu:**
 ```
 cd /root
-wget https://raw.githubusercontent.com/luogang7/SwarmMonitoring/main/docker/instubu.sh
+wget https://raw.githubusercontent.com/luogang7/SwarmMonitoring/develop/docker/instubu.sh
 chmod +x instubu.sh
 ./instubu.sh
 ```

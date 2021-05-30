@@ -13,7 +13,7 @@ CREATE TABLE `nodes`
     `chequeaddress` varchar(60),
     `category`      varchar(20) not null,
     `uncashednum`   int                  DEFAULT 0,
+    primary key (address),
     KEY             `index1` (`name`),
-    KEY             `index2` (`address`),
-    KEY             `index3` (`address`)
+    KEY             `index2` (`chequeaddress`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;

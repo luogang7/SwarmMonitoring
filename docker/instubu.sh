@@ -10,7 +10,7 @@ sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io -y
 sudo curl -L "https://github.com/docker/compose/releases/download/1.28.5/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
-sudo wget https://raw.githubusercontent.com/luogang7/SwarmMonitoring/main/docker/docker-compose.yaml
+sudo wget https://raw.githubusercontent.com/luogang7/SwarmMonitoring/develop/docker/docker-compose.yaml
 sudo mkdir /root/swarmon/ && sudo mkdir /root/swarmon/mysql && sudo mkdir /root/swarmon/mysql/init
 sudo wget https://raw.githubusercontent.com/luogang7/SwarmMonitoring/main/docker/mysql/createdb.sql -P /root/swarmon/mysql/init
 sudo docker-compose up -d
