@@ -13,9 +13,6 @@ sudo chmod +x /usr/local/bin/docker-compose
 sudo wget https://raw.githubusercontent.com/luogang7/SwarmMonitoring/main/docker/docker-compose.yaml
 sudo mkdir /root/swarmon/ && sudo mkdir /root/swarmon/mysql && sudo mkdir /root/swarmon/mysql/init
 sudo wget https://raw.githubusercontent.com/luogang7/SwarmMonitoring/main/docker/mysql/createdb.sql -P /root/swarmon/mysql/init
-sudo mkdir /root/swarmon/grafana
-sudo wget https://raw.githubusercontent.com/luogang7/SwarmMonitoring/main/docker/grafana/grafana.tar.gz
-sudo tar -zxvf grafana.tar.gz -C /
 sudo docker-compose up -d
 echo "-------------------------------------------------------------------------------------------------------"
 ip=$(curl -s api.infoip.io/ip)
