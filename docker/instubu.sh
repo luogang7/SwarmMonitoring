@@ -12,7 +12,7 @@ sudo curl -L "https://github.com/docker/compose/releases/download/1.28.5/docker-
 sudo chmod +x /usr/local/bin/docker-compose
 sudo wget https://raw.githubusercontent.com/luogang7/SwarmMonitoring/develop/docker/docker-compose.yaml
 sudo mkdir /root/swarmon/ && sudo mkdir /root/swarmon/mysql && sudo mkdir /root/swarmon/mysql/init
-sudo wget https://raw.githubusercontent.com/luogang7/SwarmMonitoring/main/docker/mysql/createdb.sql -P /root/swarmon/mysql/init
+sudo wget https://raw.githubusercontent.com/luogang7/SwarmMonitoring/develop/docker/mysql/createdb.sql -P /root/swarmon/mysql/init
 sudo docker-compose up -d
 echo "-------------------------------------------------------------------------------------------------------"
 ip=$(curl -s api.infoip.io/ip)
